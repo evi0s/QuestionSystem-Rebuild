@@ -10,6 +10,7 @@
 * Session使用Redis存储以提高性能
 * 数据库使用NoSQL数据库：MongoDB
 * 使用cluster模块提高多核CPU利用率
+* 网页前端将使用HTML5+CSS3+bootstrap+~~JQuery~~+**drypot**
 
 ## 网站API
 
