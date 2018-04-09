@@ -6,7 +6,7 @@
 
 ## 基础架构
 
-* 基于Node.js的express模块
+* 基于Node.js的express框架
 * Session使用Redis存储以提高性能
 * 数据库使用NoSQL数据库：MongoDB
 * 使用cluster模块提高多核CPU利用率
