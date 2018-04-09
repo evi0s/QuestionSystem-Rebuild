@@ -9,7 +9,7 @@
 * passwd
 
 #### route
-POST
+**POST**
 * /api/passport/login
 
 ``` json
@@ -22,15 +22,15 @@ return value:
 ```json
 {
   "code" : 1 ,
-  "message" : "success"
+  "message" : "SUCCESS"
 }
 {
   "code" : 2,
-  "message" : "username_or_passwd_error"
+  "message" : "USERNAME_OR_PASSWD_ERROR"
 }
 {
   "code" : 3,
-  "message" : "username_or_passwd_invaild"
+  "message" : "USERNAME_OR_PASSWD_INVAILD"
 }
 ```
 
@@ -43,7 +43,7 @@ return value:
 * verify code
 
 #### route
-POST
+**POST**
 * /api/passport/reg
 
 ``` json
@@ -58,23 +58,23 @@ return value:
 ```json
 {
   "code" : 1 ,
-  "message" : "success"
+  "message" : "SUCCESS"
 }
 {
   "code" : 2 ,
-  "message" : "username_existed"
+  "message" : "USERNAME_EXISTED"
 }
 {
   "code" : 3 ,
-  "message" : "form_contain_invaild_term"
+  "message" : "FORM_CONTAIN_INVAILD_TERM"
 }
 {
   "code" : 4 ,
-  "message" : "verify_code_error"
+  "message" : "VERIFY_CODE_ERROR"
 }
 {
   "code" : 5 ,
-  "message" : "verify_code_expired"
+  "message" : "VERIFY_CODE_EXPIRED"
 }
 ```
 
@@ -84,7 +84,7 @@ return value:
 * user-id
 
 ### route
-GET
+**GET**
 * /api/{user-id}/home
 
 ## Problem
@@ -93,7 +93,7 @@ GET
 * problem-id
 
 ### route
-GET
+**GET**
 * /api/problemlist
 * /api/problem/{problem-id}/{detail | author}/
 * /api/answer/{problem-id}/
@@ -104,6 +104,6 @@ GET
 * post-id
 
 ### route
-GET
+**GET**
 * /api/discusslist
 * /api/discuss/{post-id}/
