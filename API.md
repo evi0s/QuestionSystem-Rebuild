@@ -22,7 +22,7 @@ return value:
 ```json
 {
   "code" : 1 ,
-  "message" : "SUCCESS"
+  "message" : "SUCCESS"
 }
 {
   "code" : 2,
