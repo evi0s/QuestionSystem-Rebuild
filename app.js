@@ -5,6 +5,16 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var FileStreamRotator = require('file-stream-rotator');
 var fs = require('fs');
+var session = require('express-session');
+var RedisStore = require('connect-redis')(session);
+
+const init_config = JSON.parse(fs.readFileSync(`${__dirname}/config.json`));
+
+var redis_options = {
+     "host": init_config.redis_host,
+     "port": init_config.redis_port,
+     "ttl": init_config.session_ttl   //Session ttl
+};
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -26,6 +36,12 @@ var accessLogStream = FileStreamRotator.getStream({
 // setup the logger
 app.use(logger('combined', {stream: accessLogStream}));
 app.use(logger('dev'));
+
+// set Redis as session engine
+app.use(session({
+     store: new RedisStore(redis_options),
+     secret: 'hwfhc'
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
