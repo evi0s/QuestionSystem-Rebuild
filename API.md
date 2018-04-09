@@ -2,22 +2,20 @@
 
 ## Login & Reg
 
-### require
+### Login
+
+#### require
 * username
 * passwd
-* email (reg-only)
-* verify code (reg-only)
 
-### route
+#### route
 POST
-* /api/passport
+* /api/passport/login
 
-#### Login
 ``` json
 {
   "username" : "login-username" ,
-  "passwd" : "login-passwd" ,
-  "action" : "login"
+  "passwd" : "login-passwd"
 }
 ```
 return value:
@@ -36,14 +34,24 @@ return value:
 }
 ```
 
-#### Reg
+### Reg
+
+#### require
+* username
+* passwd
+* email
+* verify code
+
+#### route
+POST
+* /api/passport/reg
+
 ``` json
 {
   "username" : "reg-username" ,
   "passwd" : "reg-passwd" ,
   "email" : "reg-email" ,
-  "vcode" : "verify code" ,
-  "action" : "reg"
+  "vcode" : "verify code"
 }
 ```
 return value:
@@ -69,7 +77,6 @@ return value:
   "message" : "verify_code_expired"
 }
 ```
-
 
 ## HomePage
 
