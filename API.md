@@ -17,7 +17,8 @@ POST
 ``` json
 { 
   "username" : "login-username" ,
-  "passwd" : "login-passwd"
+  "passwd" : "login-passwd" ,
+  "action" : "login"
 }
 ```
 
@@ -28,7 +29,8 @@ POST
   "username" : "reg-username" ,
   "passwd" : "reg-passwd" ,
   "email" : "reg-email" ,
-  "vcode" : "verify code"
+  "vcode" : "verify code" ,
+  "action" : "reg"
 }
 ```
 
