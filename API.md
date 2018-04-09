@@ -15,18 +15,20 @@ POST
 #### Login
 
 ``` json
-{ "username" : username ,
-  "passwd" : passwd
+{ 
+  "username" : "login-username" ,
+  "passwd" : "login-passwd"
 }
 ```
 
 #### Reg
 
 ``` json
-{ "username" : username ,
-  "passwd" : passwd ,
-  "email" : email ,
-  "vcode" : vcode
+{ 
+  "username" : "reg-username" ,
+  "passwd" : "reg-passwd" ,
+  "email" : "reg-email" ,
+  "vcode" : "verify code"
 }
 ```
 
