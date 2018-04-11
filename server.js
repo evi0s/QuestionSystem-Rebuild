@@ -2,7 +2,7 @@ const cluster = require('cluster');
 const fs = require('fs');
 
 cluster.setupMaster({
-    exec: './app.js',
+    exec: './bin/www',
 });
 
 cluster.fork();
