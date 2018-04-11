@@ -60,13 +60,6 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
-var server = app.listen(80, function () {
-  var host = server.address().address;
-  var port = server.address().port;
-
-  console.log('Example app listening at http://%s:%s', host, port);
-});
-
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -76,6 +69,13 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+var server = app.listen(80, function () {
+  var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('Example app listening at http://%s:%s', host, port);
 });
 
 module.exports = app;
