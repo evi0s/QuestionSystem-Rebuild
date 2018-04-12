@@ -39,6 +39,8 @@ app.use(logger('dev'));
 
 // set Redis as session engine
 app.use(session({
+     resave:false,
+     saveUninitialized: true,
      store: new RedisStore(redis_options),
      secret: 'hwfhc'
 }));
