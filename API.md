@@ -81,11 +81,11 @@ return value:
 ## HomePage
 
 ### require
-* user-id
+* username
 
 ### route
 **GET**
-* /api/{user-id}/home
+* /api/{username}/home
 
 ## Problem
 
