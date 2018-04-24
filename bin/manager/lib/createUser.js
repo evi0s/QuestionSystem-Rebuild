@@ -10,17 +10,18 @@
  **
  */
 
+var fs = require('fs');
+
 const init_config = JSON.parse(fs.readFileSync(`${__dirname}/../../../config.json`));
 
 var database = init_config.database,
     url = "mongodb://" + init_config.host + ":27017",
     collection = "user";
 
-var mongo = require('../mongo')(url);
+var mongo = require('../../mongo')(url);
 
 function createUser(username, password, email, callback){
   var insertData = {
-    {
       "username" : username ,
       "nickname" : username ,
       "email" : email ,

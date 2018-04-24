@@ -1,5 +1,5 @@
-var url = "mongodb://172.17.0.2:27017";
-var mongo = require('../mongo.js')(url);
+var url = "mongodb://mongo:27017";
+var mongo = require('../index.js')(url);
 
 var findobj = {};
 
