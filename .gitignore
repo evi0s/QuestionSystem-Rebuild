@@ -1,0 +1,7 @@
+
+bin/.DS_Store
+.DS_Store
+node_modules
+.config
+.npm
+.node_repl_history

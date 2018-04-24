@@ -1,9 +1,9 @@
 {
   "directory" : "/usr/local/qs",
   "port" : 8080,
-  "redis_host" : "172.17.0.4",
+  "redis_host" : "redis",
   "redis_port" : 6379,
   "session_ttl" : 3600,
-  "database_host" : "172.17.0.2",
+  "database_host" : "mongo",
   "database" : "qs"
 }
