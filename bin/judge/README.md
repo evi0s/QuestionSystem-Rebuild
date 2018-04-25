@@ -5,7 +5,11 @@ Regular Expression Judger
 
 ```js
 var judge = require('../bin/judge');
+
+console.log(judge.judgeInteger(123));
 ```
+
+具体可参见[Test.js](/bin/judge/test/test.js)
 
 ### judge.judgeInteger
 
