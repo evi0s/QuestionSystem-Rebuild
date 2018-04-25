@@ -33,6 +33,7 @@ encrypt.encrypt = function(string){
  ** Judge
  **
  ** @param string
+ ** @param encrypted_string
  **
  */
 
