@@ -2,7 +2,7 @@
 
 User Manager
 
-## Database struct
+## user Collection struct
 
 ```json
 {
