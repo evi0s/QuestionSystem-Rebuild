@@ -36,7 +36,7 @@ function createUser(username, password, email, callback){
   };
   mongo.insertOne(database, collection, insertData, function(err,results){
     if(err) callback(err);
-    callback(results.insertedCount);
+    callback(null,results.insertedCount);
   });
 }
 

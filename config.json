@@ -5,5 +5,9 @@
   "redis_port" : 6379,
   "session_ttl" : 3600,
   "database_host" : "mongo",
-  "database" : "qs"
+  "database" : "qs",
+  "mail_host" : "localhost",
+  "mail_port" : 25,
+  "mail_auth_user" : "admin@example.com",
+  "mail_auth_pass" : "admin"
 }

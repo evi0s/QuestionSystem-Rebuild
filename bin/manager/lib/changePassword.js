@@ -36,7 +36,7 @@ function changePassword(username, old_password, new_password, callback){
       };
       mongo.update(database, collection, find_json, update_bson, function(err, results){
         if(err) callback(err);
-        callback(results.result);
+        callback(null,results.result);
       });
     }
     else{
