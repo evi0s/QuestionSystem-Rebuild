@@ -56,7 +56,7 @@ function ExpireTime(expire_time){
 
 
 /**
- ** GenerateRegNewVCode
+ ** GenerateNewVCode
  **
  ** @param username
  ** @param email
@@ -65,7 +65,7 @@ function ExpireTime(expire_time){
  **
  */
 
-vcode.GenerateRegNewVCode = function(username, email, method, callback){
+vcode.GenerateNewVCode = function(username, email, method, callback){
   var NewVCode = randomWord(true, 6, 8);
   var expire_time = ExpireTime(1800);
   var insert_json = {

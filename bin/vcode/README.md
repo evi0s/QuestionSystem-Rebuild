@@ -14,6 +14,10 @@
 }
 ```
 
+method为Reg或RevertPassword
+
+expire_time为UNIX时间戳
+
 ## Usage
 
 ```js
