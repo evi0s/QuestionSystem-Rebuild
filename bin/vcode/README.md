@@ -23,7 +23,7 @@ expire_time为UNIX时间戳
 ```js
 var vcode = require('../index.js');
 
-vcode.GenerateRegNewVCode("test", "test@test.com", "Reg" ,function(err, results){
+vcode.GenerateNewVCode("test", "test@test.com", "Reg" ,function(err, results){
   if(err) console.log(err);
   console.log(results);
   console.log(results.vcode);
