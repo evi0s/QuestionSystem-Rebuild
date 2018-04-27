@@ -15,7 +15,7 @@ var fs = require('fs');
 const init_config = JSON.parse(fs.readFileSync(`${__dirname}/../../../config.json`));
 
 var database = init_config.database,
-    url = "mongodb://" + init_config.host + ":27017",
+    url = "mongodb://" + init_config.database_host + ":27017",
     collection = "user";
 
 var mongo = require('../../mongo')(url);
