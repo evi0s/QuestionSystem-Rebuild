@@ -2,7 +2,7 @@
 /**
  ** Mongo Database module
  **
- ** @version 0.0.2
+ ** @version 0.0.3
  **
  */
 
@@ -31,16 +31,21 @@ var mongo = module.exports = function(url_defined){
  ** @param database
  ** @param collection
  ** @param find_json find the json
+ ** @param sort_option
  **
  ** @return result json
  */
 
-mongo.find = function(database,collection,find_json,callback){
+mongo.find = function(database,collection,find_json,sort_option,callback){
   MongoClient.connect(url, function(err, db) {
       //if (err) throw err;
       if(err) callback(err);
       var dbo = db.db(database);
-      dbo.collection(collection).find(find_json).toArray(function(err, result) {
+      if (typeof sort_option === 'function') {
+        callback = sort_option;
+        sort_option = {"_id":1};
+      }
+      dbo.collection(collection).find(find_json).sort(sort_option).toArray(function(err, result) {
           //if(err) throw err;
           if(err) callback(err);
           //console.log(result);
