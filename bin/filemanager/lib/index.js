@@ -74,7 +74,7 @@ filemanager.SaveUploadFile = function(req, callback){
     };
     mongo.insertOne(database, collection, insertobj, function(err,results){
       if(err)  callback(err);
-      sampleFile.mv(init_config.upload_directory + UploadFile.md5, function(err) {
+      UploadFile.mv(init_config.upload_directory + UploadFile.md5, function(err) {
         if (err) callback(err);
         callback(null, success_msg);
       });
