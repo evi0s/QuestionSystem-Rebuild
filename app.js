@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var FileStreamRotator = require('file-stream-rotator');
 var fs = require('fs');
+var fileUpload = require('express-fileupload');
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
 
@@ -32,6 +33,11 @@ var accessLogStream = FileStreamRotator.getStream({
   frequency: 'daily',
   verbose: false
 });
+
+// setup the filemanager
+app.use(fileUpload({
+  limits: { fileSize: init_config.upload_fileSize_limit },
+}));
 
 // setup the logger
 app.use(logger('combined', {stream: accessLogStream}));

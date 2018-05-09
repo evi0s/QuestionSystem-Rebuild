@@ -1,5 +1,8 @@
 {
   "directory" : "/usr/local/qs",
+  "upload_directory" : "/usr/local/qs/public/upload",
+  "upload_fileSize_limit" : 20971520 ,
+  "static_file_url" : "https://qs.lrworkshop.xin/public/upload/",
   "port" : 8080,
   "redis_host" : "redis",
   "redis_port" : 6379,

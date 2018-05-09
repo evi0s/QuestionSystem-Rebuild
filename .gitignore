@@ -6,3 +6,9 @@ node_modules
 .npm
 .node_repl_history
 .bash_history
+.vim/
+.vim-fuf-data/VERSION
+.viminfo
+.vimrc
+.cache/ctrlp/mru/cache.txt
+*.log
