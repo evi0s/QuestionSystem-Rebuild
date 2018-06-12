@@ -2,11 +2,12 @@
 /**
  ** Mongo Database module
  **
- ** @version 0.0.3
+ ** @version 0.0.6
  **
  */
 
 var MongoClient = require('mongodb').MongoClient;
+var ObjectId = require('mongodb').ObjectId;
 
 var url;
 
@@ -55,6 +56,42 @@ mongo.find = function(database,collection,find_json,sort_option,callback){
           db.close();
       });
   });
+}
+
+/**
+ ** String2ObjectId
+ **
+ ** @param string
+ **
+ ** @return ObjectId
+ */
+
+mongo.String2ObjectId = function(string){
+  return new ObjectId(string);
+}
+
+/**
+ ** ObjectId2String
+ **
+ ** @param ObjectId
+ **
+ ** @return string
+ */
+
+mongo.ObjectId2String = function(Objectid){
+  return Objectid.toString();
+}
+
+/**
+ ** ObjectId2UnixTimeStamp
+ **
+ ** @param ObjectId
+ **
+ ** @return int
+ */
+
+mongo.ObjectId2UnixTimeStamp = function(Objectid){
+  return Math.round(Date.parse(Objectid.getTimestamp())/1000);
 }
 
 /**

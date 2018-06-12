@@ -1,7 +1,6 @@
 # mongo
 Node.js MongoDB module
 
-NOT Tested Yet
 ## Usage
 
 ```js
@@ -20,6 +19,33 @@ mongo.find(database,collection,findobj,function(err,results){
 });
 ```
 Result will be a json object
+
+### mongo.String2ObjectId
+
+```js
+var str = "5b1e7f1e24e8ab001663b37a";
+
+var oid = mongo.String2ObjectId(str);
+```
+Result will be a ObjectId object
+
+### mongo.ObjectId2String
+
+```js
+var oid = new ObjectId();
+
+var str = mongo.ObjectId2String(oid);
+```
+Result will be a String
+
+### mongo.ObjectId2UnixTimeStamp
+
+```js
+var oid = new ObjectId("5b1e7f1e24e8ab001663b37a");
+
+var unixtimestamp = mongo.ObjectId2UnixTimeStamp(oid);
+```
+Result will be unix timestamp
 
 ### mongo.insertOne
 
