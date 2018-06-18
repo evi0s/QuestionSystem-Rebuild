@@ -2,7 +2,7 @@
 /**
  ** Mongo Database module
  **
- ** @version 0.0.6
+ ** @version 0.0.7
  **
  */
 
@@ -40,12 +40,12 @@ var mongo = module.exports = function(url_defined){
 mongo.find = function(database,collection,find_json,sort_option,callback){
   MongoClient.connect(url, function(err, db) {
       //if (err) throw err;
-      if(err) callback(err);
-      var dbo = db.db(database);
       if (typeof sort_option === 'function') {
         callback = sort_option;
         sort_option = {"_id":1};
       }
+      if(err) callback(err);
+      var dbo = db.db(database);
       dbo.collection(collection).find(find_json).sort(sort_option).toArray(function(err, result) {
           //if(err) throw err;
           if(err) callback(err);
@@ -163,12 +163,12 @@ mongo.insertMany = function(database,collection,insert_arr,callback){
 mongo.update = function(database,collection,query_json,update_json,options,callback){
   MongoClient.connect(url, function(err, db) {
       //if (err) throw err;
-      if(err) callback(err);
-      var dbo = db.db(database);
       if (typeof options === 'function') {
         callback = options;
         options = {upsert:true, multi:false};
       }
+      if(err) callback(err);
+      var dbo = db.db(database);
       dbo.collection(collection).update(query_json,update_json,options, function(err, result) {
           //if (err) throw err;
           if(err) callback(err);
@@ -195,12 +195,12 @@ mongo.update = function(database,collection,query_json,update_json,options,callb
 mongo.remove = function(database,collection,delete_json,option,callback){
   MongoClient.connect(url, function(err, db) {
       //if (err) throw err;
-      if(err) callback(err);
-      var dbo = db.db(database);
       if (typeof option === 'function') {
         callback = option;
         option = {justOne:false};
       }
+      if(err) callback(err);
+      var dbo = db.db(database);
       dbo.collection(collection).remove(delete_json,option, function(err, result) {
           //if (err) throw err;
           if(err) callback(err);
